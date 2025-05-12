@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Acción para mostrar Pacientes -->
+    <record id="action_pacientes" model="ir.actions.act_window">
+      <field name="name">Pacientes</field>
+      <field name="res_model">hospital.paciente</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+        <record id="action_tratamientos" model="ir.actions.act_window">
+      <field name="name">Tratamientos</field>
+      <field name="res_model">hospital.tratamiento</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    <record id="action_report_pacientes" model="ir.actions.report">
+      <field name="name">Reporte de Pacientes</field>
+      <field name="model">hospital.paciente</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">vertical_hospital.paciente_report_template</field> <!-- ESTE debe coincidir -->
+      <field name="binding_model_id" ref="model_hospital_paciente"/>
+      <field name="binding_type">action</field>
+    </record>
+
+
+</odoo>
+    <!-- Menú raíz: Hospital
+    <menuitem id="menu_hospital_root"
+              name="Hospital"
+              sequence="10"
+              action="action_pacientes"
+              web_icon="vertical_hospital,static/description/icon.png"/>
+
+
+    <menuitem id="menu_pacientes"
+              name="Pacientes"
+              parent="menu_hospital_root"
+              sequence="20"
+              action="action_pacientes"/> -->
+
+
+
+
+
+

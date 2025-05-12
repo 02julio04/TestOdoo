@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- Vista Tree -->
+    <record id="view_tratamiento_view_list" model="ir.ui.view">
+      <field name="name">hospital.tratamiento.view.list</field>
+      <field name="model">hospital.tratamiento</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="codigo"/>
+          <field name="name"/>
+          <field name="medico"/>
+        </list>
+      </field>
+    </record>
+
+</odoo>

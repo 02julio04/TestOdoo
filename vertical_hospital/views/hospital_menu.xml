@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Menú raíz: Hospital -->
+    <menuitem id="menu_hospital_root" name="Hospital">
+        <menuitem id="hospital_menu" name="Menu" sequence="5">
+        <menuitem id="hospital_menu_Pacientes_action" action= "action_pacientes" sequence="5"/>
+        <menuitem id="hospital_menu_Tratamientos_action" action= "action_tratamientos" sequence="10"/>
+        </menuitem>
+        </menuitem>
+
+
+</odoo>
+

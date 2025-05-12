@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- Vista Tree -->
+    <record id="view_paciente_view_list" model="ir.ui.view">
+      <field name="name">hospital.paciente.view.list</field>
+      <field name="model">hospital.paciente</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="secuencia"/>
+          <field name="name"/>
+          <field name="rnc"/>
+          <field name="state"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="action_report_pacientes" model="ir.actions.report">
+    <field name="name">Reporte de Pacientes</field>
+    <field name="model">hospital.paciente</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">vertical_hospital.paciente_report_template</field>
+    <field name="binding_model_id" ref="model_hospital_paciente"/>
+    <field name="binding_type">action</field>
+  </record>
+
+
+
+    <record id="view_paciente_form" model="ir.ui.view">
+      <field name="name">hospital.paciente.form</field>
+      <field name="model">hospital.paciente</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="secuencia" readonly="1"/>
+              <field name="name"/>
+              <field name="rnc"/>
+              <field name="tratamiento_id" options="{'no_create': True}"/>
+              <field name="tratamiento_info" readonly="1"/>
+              <field name="fecha_alta" readonly="1"/>
+              <field name="fecha_actualizacion" readonly="1"/>
+              <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+            </group>
+            <chatter/>
+          </sheet>
+        </form>
+      </field>
+    </record> 
+
+</odoo>
