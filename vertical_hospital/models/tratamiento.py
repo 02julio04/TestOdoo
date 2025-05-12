@@ -22,6 +22,11 @@ class HospitalTratamiento(models.Model):
     name = fields.Char(string='Nombre del Tratamiento', required=True)
     medico = fields.Char(string='Médico Tratante', required=True)
 
+    _sql_constraints = [
+        ('unique_codigo', 'unique(codigo)',
+         'El código del tratamiento debe ser único.')
+    ]
+
     @api.constrains('codigo')
     def _check_codigo_no_contiene_026(self):
         for record in self:
